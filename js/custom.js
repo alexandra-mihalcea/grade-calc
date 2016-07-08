@@ -31,10 +31,10 @@ function calculateAverage() {
 	for( var i = 0; i < formData.length; i++ ){
 		if(formData.elements[i].value!= 0){
 			if(i%3==0){
-				marks[count1]=formData.elements[i].value;
+				marks[count1]=Math.abs(formData.elements[i].value);
 				count1++;}
 			else if(i%3==1){
-				weight[count2]=formData.elements[i].value;
+				weight[count2]=Math.abs(formData.elements[i].value);
 				count2++;}
 		}
 	}
@@ -60,8 +60,8 @@ function calculateAverage() {
 function findNeeded() {
 	var formData = document.getElementById("formdata");
 	var formData2 = document.getElementById("formdesired");
-	var desiredGrade=formData2.elements[0].value;
-	var remainingWeight=formData2.elements[1].value;
+	var desiredGrade=Math.abs(formData2.elements[0].value);
+	var remainingWeight=Math.abs(formData2.elements[1].value);
 	marks=[];
 	weight=[];
 	var sum = 0, counter=0, temp=0, count1=0, count2=0, x=0;
@@ -69,10 +69,10 @@ function findNeeded() {
 	for( var i = 0; i < formData.length; i++ ){
 		if(formData.elements[i].value!= 0){
 			if(i%3==0){
-				marks[count1]=formData.elements[i].value;
+				marks[count1]=Math.abs(formData.elements[i].value);
 				count1++;}
 			else if(i%3==1){
-				weight[count2]=formData.elements[i].value;
+				weight[count2]=Math.abs(formData.elements[i].value);
 				count2++;}
 		}
 	}
