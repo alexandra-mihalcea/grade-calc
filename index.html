@@ -51,18 +51,26 @@
             <div class="row">
                 <div class="control-group" id="fields">
                     <label class="description"> 
-                    	<div class="row"> 
+                    	<div class="row "> 
                           <div class="col-md-6  col-md-offset-3" style="font-size: medium; text-align: justify; "> <p><i class="fa fa-info-circle" aria-hidden="true" style="font-size: xx-large; "></i> Enter your grades in the left textbox and their respective weight in the right one. You can leave the weight textbox empty if they all have equal weight.</p></div>
                         </div>
                     </label>
-                    <div class="controls"> 
+                    <div class="desiredcontrols">
+                    	<form role="form" autocomplete="off" id="formdesired" name="DesiredForm" class="form-inline">
+                            <div class="form-group form-style">
+                                <input class="form-control" name="wantedgrade" type="text" placeholder="Required Final Grade" />
+                                <input class="form-control" name="remaining weight" type="text" placeholder="Remaining Weight/Credits" />
+                            </div>
+                        </form>
+                    </div> 
+                    <div class="controls">
                         <form role="form" autocomplete="off" id="formdata" name="Form" class="form-inline">
                             <div class="entry input-group">
                             <div class="form-group form-style">
                                 <input class="form-control" name="grades[]" type="text" placeholder="Grade" />
                                 <input class="form-control" name="weights[]" type="text" placeholder="Weight/Credits" />
                                 <span class="input-group-btn">
-                                    <button class="btn btn-success btn-add" type="button">
+                                    <button class="btn btn-success btn-add btnform" type="button">
                                         <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 </span>
@@ -74,15 +82,22 @@
         </div>
    </div><!--/calculator-->
    
-   <div id="results" class="results">
+   <div id="results" class="hidden-area">
    <h4>Your final grade is:</h4>
    <h2 id="result"></h2>
+   </div>
+   
+   <div id="required" class="hidden-area">
+   <h4>Your required grade is:</h4>
+   <h2 id="requiredMark"></h2>
+   <h2 id="greeting"></h2>
    </div>
 
     <!--Bottons-->
         <div class="row">
             <div class="col-lg-12 ">
                         <a class="btn btn-default btn-lg" id="calculate" onclick="calculateAverage()"> Calculate final grade</a>
+                        <a class="btn btn-default btn-lg" id="find" onclick="findNeeded()"> Find required grade</a>
                         <a href="" class="btn btn-default btn-lg"> Reset</a>
             </div>
         </div>
@@ -101,6 +116,16 @@ $(document).ready(function(){
     $("#calculate").click(function(){
 		var div = document.getElementById("results");
 		div.style.display = "block";
+		var div2 = document.getElementById("required");
+		div2.style.display = "none";
+    });
+});
+$(document).ready(function(){
+	$("#find").click(function(){
+		var div = document.getElementById("required");
+		div.style.display = "block";
+		var div2 = document.getElementById("results");
+		div2.style.display = "none";
     });
 });
 </script>
