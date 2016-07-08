@@ -106,7 +106,7 @@ function findNeeded() {
 		temp=Math.pow(10, count);
 		count++;
 	}
-	if(0<x&&x<temp){
+	if(0<x&&x<=temp){
 		document.getElementById("greeting").innerHTML = "Good luck!";
 	}
 	else if(x==0){
