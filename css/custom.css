@@ -18,6 +18,10 @@ html {
     height: 100%;
 }
 
+
+
+
+
 .center-div{
     margin: 0 auto;
     width:80% /* value of your choice which suits your alignment */
@@ -153,6 +157,13 @@ footer p {
 	
 }
 
+
+@media(min-width:767px) {
+.larger-textbox{
+	width:250px!important;	
+	
+}
+}
 @media(max-width:767px) {
 .btn {
 	margin-bottom:5px;
@@ -167,9 +178,13 @@ footer p {
 	border-radius: 5px;
 	
 }
-.form-control{
-	border-radius: 5px !important;	
 
+.input-group{
+	width:100%;	
+}
+.form-control{
+	border-radius: 5px !important;
+	
 }
 .btnform{
 	width: 100%;
