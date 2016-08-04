@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+# Version: 1.00
+
+CACHE:
+index.html
+css/bootstrap.min.css
+css/custom.css
+font-awesome/css/font-awesome.min.css
+img/favicon-calculator_blue.ico
+img/startup.png
+js/jquery.js
+js/bootstrap.min.js
+js/jquery.easing.min.js
+js/custom.js
